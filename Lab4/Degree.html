@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>Degree Page</title>
+    </head>
+
+    <body>
+        <form method="post" action="validateDegree.php" enctype="">
+        <fieldset>
+            <legend><b><h2>Degree</h2></b></legend>
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="degrees[]" value="SSC" /> SSC
+                        <input type="checkbox" name="degrees[]" value="HSC" /> HSC
+                        <input type="checkbox" name="degrees[]" value="BSc" /> BSc
+                        <input type="checkbox" name="degrees[]" value="MSc" /> MSc
+                    </td>
+                </tr>
+            </table>
+        <table>
+            <hr></hr>
+            <tr>
+                <td><input type="submit" name="submit" value="Submit" /></td>
+            </tr>
+        </table>
+        </fieldset>
+    </body>
+</html>

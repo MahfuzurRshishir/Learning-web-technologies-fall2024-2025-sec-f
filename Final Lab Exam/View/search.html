@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Search Employee</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <fieldset>
+        <legend>Search Employee</legend>
+        <h3>Give Name or Username for Searching</h3>
+        <input type="text" id="searchKeyword" placeholder="Enter name or username"><br>
+        <h5 id="searchMessage"></h5>
+        <input type="submit" value="Search" onclick="searchCheck()" /><br>
+        <a href="../View/home.php">Back</a> |
+        <a href="../Controller/logout.php">Logout</a>
+    </fieldset>
+
+
+    <script>
+        function searchCheck() {
+            let searchKey = document.getElementById('searchKeyword').value;
+
+            if (searchKey === "") {
+                document.getElementById('searchMessage').innerHTML = "Enter username or name!";
+                document.getElementById('searchMessage').style.color = "red";
+                return;
+            }
+
+            let xhttp = new XMLHttpRequest();
+            xhttp.open('POST', '../Controller/searchCheck.php', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send('searchKey=' + searchKey);
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById('searchMessage').innerHTML = this.responseText;
+                    document.getElementById('searchMessage').style.color = "black";
+                }
+            };
+        }
+
+    </script>
+</body>
+
+</html>

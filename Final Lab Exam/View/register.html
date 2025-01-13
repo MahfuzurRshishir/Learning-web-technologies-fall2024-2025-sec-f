@@ -1,0 +1,61 @@
+<html lang="en">
+
+<head>
+    <title>Register New Employee</title>
+</head>
+
+<body>
+    <fieldset>
+        <legend>Employee Management</legend>
+        <h1 id="head">Register New Employee</h1>
+
+        Name: <br>
+        <input type="text" id="empName" placeholder="Employee Name"><br>
+        Contact No: <br>
+        <input type="number" id="empContact" placeholder="Contact No"><br>
+        User Name: <br>
+        <input type="text" id="empUsername" placeholder="Username"><br>
+        Password:  <br>
+        <input type="text" id="empPassword" placeholder="Password"><br>
+        <h5 id="registerMessage"></h5>
+
+        <input type="submit" value="Register" onclick="registerEmployee()"><br>
+        <a href="../View/home.php">Back</a>
+    </fieldset>
+
+    <script>
+        function registerEmployee() {
+            let name = document.getElementById('empName').value;
+            let contact = document.getElementById('empContact').value;
+            let username = document.getElementById('empUsername').value;
+            let password = document.getElementById('empPassword').value;
+
+            if (name === "" || contact === "" || username === "" || password === "") {
+                document.getElementById('registerMessage').innerHTML = "All fields are required!";
+                document.getElementById('registerMessage').style.color = "red";
+                return;
+            }
+
+            let xhttp = new XMLHttpRequest();
+            xhttp.open('POST', '../Controller/registerCheck.php', true);
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send('name=' + name + '&contact=' + contact + '&username=' + username + '&password=' + password);
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                    // document.getElementById('head').innerHTML = this.responseText;
+                    if (this.responseText.trim() === "Success") {
+                        alert("Successfully registered!");
+                        window.location.href = "../View/home.php";
+                    } else {
+                        document.getElementById('registerMessage').innerHTML = this.responseText;
+                        document.getElementById('registerMessage').style.color = "red";
+                    }
+                }
+            };
+        }
+    </script>
+</body>
+
+</html>

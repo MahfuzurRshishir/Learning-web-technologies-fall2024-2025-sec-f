@@ -1,0 +1,80 @@
+body {
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(120deg, #89f7fe, #66a6ff);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #388e3c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    color: #444;
+}
+
+table td button {
+    padding: 8px 15px;
+    background-color: #2196f3;
+    color: white;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s ease;
+}
+
+table td button:hover {
+    background-color: #1976d2;
+}
+
+table td form button {
+    background-color: #f44336;
+}
+
+table td form button:hover {
+    background-color: #d32f2f;
+}

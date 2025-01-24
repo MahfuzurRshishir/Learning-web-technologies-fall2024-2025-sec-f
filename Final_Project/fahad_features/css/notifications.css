@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+
+table td {
+    padding: 15px;
+}
+
+.nav-header {
+    background-color: #0078D7;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-header strong {
+    font-size: 18px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+fieldset {
+    border: 2px solid #0078D7;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0078D7;
+    padding: 0 10px;
+}
+
+form {
+    width: 100%;
+}
+
+input[type="text"], input[type="email"], textarea {
+    width: 95%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"], input[type="reset"] {
+    background-color: #0078D7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+input[type="submit"]:hover, input[type="reset"]:hover {
+    background-color: #005bb5;
+}
+
+textarea {
+    resize: none;
+}
+
+p {
+    text-align: center;
+    margin: 10px 0;
+}
+
+p.error {
+    color: red;
+}
+
+p.success {
+    color: green;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
